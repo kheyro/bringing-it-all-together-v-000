@@ -73,19 +73,6 @@ class Dog
       SELECT *
       FROM dogs
       WHERE name = ?
-      AND breed <> ?
-    SQL
-
-    result = DB[:conn].execute(sql, name, breed)
-
-    if !result.empty?
-      return new_from_db(result)
-    end
-
-    sql = <<-SQL
-      SELECT *
-      FROM dogs
-      WHERE name = ?
       AND breed = ?
     SQL
 
