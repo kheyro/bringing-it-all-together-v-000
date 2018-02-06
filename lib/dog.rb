@@ -66,4 +66,19 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE id = ? LIMIT 1", id).flatten
     new_from_db(dog)
   end
+
+  def self.find_or_create_by(name:, breed:)
+    sql = <<-SQL
+      SELECT *
+      FROM dogs
+      WHERE name = ?
+      AND breed = ?
+    SQL
+
+    result = DB[:conn].execute(sql, name, breed)
+
+    if result.empty
+      create(name: name, breed: breed)
+    end
+  end
 end
