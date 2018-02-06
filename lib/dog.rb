@@ -34,6 +34,12 @@ class Dog
     end
   end
 
+  def create(hash)
+    dog = Dog.new(name: hash[:name], breed: hash[:breed])
+    dog.save
+    dog
+  end
+  
   def update
   end
 
