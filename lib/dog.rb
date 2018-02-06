@@ -84,6 +84,5 @@ class Dog
       create(name: name, breed: breed)
     end
 
-
   end
 end
