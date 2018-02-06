@@ -79,7 +79,7 @@ class Dog
 
     binding.pry
 
-    if result.empty?
+    if !result.empty?
       create(name: name, breed: breed)
     end
 
