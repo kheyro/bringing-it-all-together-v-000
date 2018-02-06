@@ -81,7 +81,7 @@ class Dog
     if !result.empty?
       return new_from_db(result)
     end
-    
+
     sql = <<-SQL
       SELECT *
       FROM dogs
