@@ -39,7 +39,7 @@ class Dog
     dog.save
     dog
   end
-  
+
   def update
   end
 
