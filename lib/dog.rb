@@ -75,7 +75,7 @@ class Dog
       AND breed = ?
     SQL
 
-    result = DB[:conn].execute(sql, name, breed)
+    result = DB[:conn].execute(sql, name, breed).flatten
 
     if result.empty?
       return create(name: name, breed: breed)
