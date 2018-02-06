@@ -79,7 +79,7 @@ class Dog
 
     if !result.empty?
       new_from_db(name: name, breed: breed)
-    else 
+    else
       create(name: name, breed: breed)
     end
 
