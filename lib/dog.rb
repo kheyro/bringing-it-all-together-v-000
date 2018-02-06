@@ -78,7 +78,7 @@ class Dog
     result = DB[:conn].execute(sql, name, breed)
 
     if result.empty
-      create(name: name, breed: breed)
+      return create(name: name, breed: breed)
     end
   end
 end
