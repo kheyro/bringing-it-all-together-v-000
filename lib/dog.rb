@@ -79,7 +79,7 @@ class Dog
     result = DB[:conn].execute(sql, name, breed)
 
     if !result.empty?
-      new_from_db(result)
+      new_from_db(result[0])
     else
       create(name: name, breed: breed)
     end
